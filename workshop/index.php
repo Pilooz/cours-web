@@ -24,6 +24,22 @@
             float:right;
         }
         /**/
+        /* pour le detail de l'article */
+        .accroche {
+            text-transform: uppercase;
+            font-weight: bold;
+            color:gray;
+            padding-bottom:20px;
+            margin-bottom: 2px;
+            border-bottom: olive solid 5px;
+        }
+
+        article::first-letter {
+            color:olive;
+            font-size: 230%;
+            font-weight: bolder;
+        }
+        /**/
     </style>
 </head>
 <body>

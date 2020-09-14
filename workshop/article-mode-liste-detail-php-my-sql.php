@@ -2,6 +2,13 @@
     <?php
     require('bdd.php');    
 
+    // Gestion d'un paramètre de navigation
+    $action = "liste";
+    if (isset( $_GET["action"])) {
+        $action = $_GET["action"];
+    }
+
+    // Liste de tous les articles
     $liste_article = db_select("select * from article a ORDER BY a.date_publication DESC");
 
     // Fonction qui renvoie la liste des tags pour un article donné
@@ -14,8 +21,8 @@
         return $tag_list;
     }
 
-
-    foreach ($liste_article as $index => $article) {
+    if ($action == "liste") {
+        foreach ($liste_article as $index => $article) {
 ?>
     <div class="col-sm-4">
         <div class="card">
@@ -37,10 +44,36 @@
     </div>
     
 <?php
-        if ($index == 2 || $index == 5) {
-            echo "</div>\n";
-            echo"<div class='row'>\n"; 
+            if ($index == 2 || $index == 5) {
+                echo "</div>\n";
+                echo"<div class='row'>\n"; 
+            }
         }
+?>
+
+<?php 
+    } // Fin if
+    else { // Ici $action == "detail"
+        $data_article = db_select("select * from article a WHERE a.id = " . htmlentities($_GET['id']));
+        $data_article = $data_article[0];
+        
+?>
+     <div class="col-sm-12">
+        <p class="tag-list">
+            <?php echo get_tag_list($data_article['id']); ?>
+        </p>
+        <h2>
+            <?php echo $data_article['titre']; ?>
+        </h2>
+        <div class="accroche">
+            <?php echo $data_article['accroche']; ?>
+        </div>
+        <article>
+            <?php echo $data_article['texte']; ?>
+        </article>
+     </div>
+<?php
     }
 ?>
+
 </div>
