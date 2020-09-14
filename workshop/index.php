@@ -6,15 +6,24 @@
         .content, .relative {
             min-height : 500px;
         }
-        
         .rubriqueActive {
             color:white;
             background-color: #aaaaaa;
         }
-        button a:hover {
+
+        button a, button a:hover {
+            color:white;
             text-decoration: none;
         }
 
+        /* mise en forme de la liste d'article
+        .tag-list {
+            float:right;
+        }
+        .actions button {
+            float:right;
+        }
+        */
     </style>
 </head>
 <body>
