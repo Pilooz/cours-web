@@ -3,19 +3,19 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
     <style>
-        .content {
-            background-color: pink;
+        .content, .relative {
+            min-height : 500px;
         }
-        .relative {
-            background-color: lightgreen;
-        }
-
+        
         .rubriqueActive {
             color:white;
-            background-color: gray;
+            background-color: #aaaaaa;
         }
-    </style>
+        button a:hover {
+            text-decoration: none;
+        }
 
+    </style>
 </head>
 <body>
 <div class="container">
@@ -23,6 +23,7 @@
     require('header.php');
  ?>
   <div class="row">
+    <div class="col-sm-8 content">
 <?php
     if (isset($_GET['nav'])) {
         $navig = $_GET['nav'];    
@@ -44,9 +45,24 @@
             break;
     }
 ?>
+    </div>
+    <div class="col-sm-4 relative">
 <?php 
-require('relative.php');
+    switch ($navig) {
+        case 'index':
+            require('relative-content.php');
+            break;
+        
+        case 'todo':
+            require('relative-todo.php');
+            break;
+            
+            default:
+            require('relative-content.php');
+            break;
+    }
 ?>
+    </div>
 <?php
 require('footer.php');
 ?>
