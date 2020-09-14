@@ -6,4 +6,5 @@
 
     // require('article-mode-liste-boucle-php.php'); 
     // require('article-mode-liste-php-my-sql.php'); 
+    require('article-mode-liste-detail-php-my-sql.php'); 
     ?>
