@@ -16,14 +16,14 @@
             text-decoration: none;
         }
 
-        /* mise en forme de la liste d'article
+        /* mise en forme de la liste d'article */
         .tag-list {
             float:right;
         }
         .actions button {
             float:right;
         }
-        */
+        /**/
     </style>
 </head>
 <body>
@@ -31,6 +31,7 @@
 <?php
     require('header.php');
  ?>
+
   <div class="row">
     <div class="col-sm-8 content">
 <?php
@@ -54,6 +55,7 @@
             break;
     }
 ?>
+
     </div>
     <div class="col-sm-4 relative">
 <?php 
@@ -72,8 +74,11 @@
     }
 ?>
     </div>
+  </div>
 <?php
 require('footer.php');
 ?>
+
+</div>
 </body>
 </html>
