@@ -2,27 +2,28 @@
 $mysqli = "";
 // Configuration des paramètres de la base de données
 $db_config = [
-    "host" => "localhost",
-    "dbname" => "cv_db",
+    "host" => "localhost:8889",
+    "dbname" => "blog",
     "login" => "root",
-    "password" => "toortoor",
+    "password" => "root"
 ];
+
+$mysqli = new mysqli($db_config["host"], $db_config["login"], $db_config["password"], $db_config["dbname"]);
 
 // Fonction de connexion à la base.
 function _db_connect() {
     global $mysqli, $db_config;
-    $mysqli = new mysqli($db_config["host"], $db_config["login"], $db_config["password"], $db_config["dbname"]);
     // Check connection
-    if (!$mysqli) {
-        die("Connection failed: " . mysqli_connect_error());
+    if (!$mysqli->real_connect($db_config["host"], $db_config["login"], $db_config["password"], $db_config["dbname"])) {
+        die('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
     }
     return $mysqli;
 }
 
 // Fonction de sélection dans la base de données.
 function db_select($sql, $debug = false) {
-    $mysqli = _db_connect();
-    $result = $mysqli->query($sql);
+    global $mysqli;
+    $result = mysqli_query($mysqli, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
@@ -35,12 +36,14 @@ function db_select($sql, $debug = false) {
     if ($debug) {
         print_r($rows);
     }
+    // mysqli_close($mysqli);
     return $rows;
 }
 
 // Fonction d'execution d'un ordre SQL DML : Insert/Update/delete
 function db_insert($sql) {
-    $mysqli = _db_connect();
+    global $mysqli;
+    // $mysqli = _db_connect();
     if ($mysqli->query($sql) === TRUE) {
         return $mysqli->affected_rows;
     } else {

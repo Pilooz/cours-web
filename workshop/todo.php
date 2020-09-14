@@ -17,6 +17,11 @@
                     </ul>
                 <li>Faire une boucle php pour génerer ces modèles d'articles</li>
                 <li>connecter mySQL à notre backend.</li>
+                <li>s'assurer que Mysql est démarré, que la base de données est bien créée (via SQLWorbench)</li>
+                <li>Saisir des articles dans la base de données (via PHPMyadmin)</li>
+                <li>Ecrire une requête SQL pour extraire les aritcles les plus récents de la BDD</li>
+                <li>Modifier le modèle PHP pour prendre en compte les données des articles venant de la BDD</li>
+                
             </ol>
         <li>Développer une page de détails d'un article (visualisation d'un article)</li>
     </ol>
