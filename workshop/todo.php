@@ -13,13 +13,13 @@
         <li class="done">Penser le modèle Mysql qui permet de stocker les données du blog.</li>
         <li class="">Développer une page de liste d'articles
             <ol>
-                <li class="">Editer un nouveau fichier <b>article-mode-liste.php</b></li>
-                <li class="">L'intégrer dans content.php en utilisant 'require'.</li>
+                <li class="done">Editer un nouveau fichier <b>article-mode-liste.php</b></li>
+                <li class="done">L'intégrer dans content.php en utilisant 'require'.</li>
                 <li class="">dans ce fichier, écrire un modèle html qui présente les données suivantes :
                     <ul>
-                        <li class="">les tags associés,</li>
-                        <li class="">le titre de l'aricle,</li>
-                        <li class="">le résumé,</li>
+                        <li class="done">les tags associés,</li>
+                        <li class="done">le titre de l'aricle,</li>
+                        <li class="done">le résumé,</li>
                         <li class="">et un bouton "lire la suite"</li>
                     </ul>
                 </li>
