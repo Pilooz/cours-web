@@ -45,7 +45,8 @@ function db_insert($sql) {
     global $mysqli;
     // $mysqli = _db_connect();
     if ($mysqli->query($sql) === TRUE) {
-        return $mysqli->affected_rows;
+        // return $mysqli->affected_rows;
+        return $mysqli->insert_id;
     } else {
         die ("Error: " . $sql . "<br>" . $mysqli->error);
     }

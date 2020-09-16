@@ -41,7 +41,7 @@
                 <li class="done">Connecter à la BDD pour extraire les bonnes données.</li>
             </ol>
         </li>
-        <li class="">Développer un formulaire d'ajout d'article
+        <li class="done">Développer un formulaire d'ajout d'article
             <ol>
                 <li class="">Créer une action 'ecrire' et la prendre en compte de le fichier qui gère la liste des articles</li>
                 <li class="">Développer la page HTML qui présente un formulaire d'ajout d'un article</li>
